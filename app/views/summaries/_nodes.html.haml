@@ -1,0 +1,20 @@
+%table#node-summary
+  %tbody
+    - @node_summaries.each do |n|
+      %tr{ :class => n[ :label ]}
+        %td.value
+          = n[ :count ]
+        %td.label
+          = "#{ n[ :label ].titleize },"
+          %em
+            = "#{ n[ :percent ] }%"
+          %hr{ :style => "width:#{ n[ :percent ].round }%;" }
+
+    %tr.total
+      %th.value
+        = @total_nodes
+      %th.label
+        Total nodes
+        %em
+          100%
+        %hr

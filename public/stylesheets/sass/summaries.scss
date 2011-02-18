@@ -1,0 +1,156 @@
+$hairline-color : #ddd;
+$link-color : #36f;
+$link-color-hover : $link-color + #333;
+
+$unresponsive-color : gray;
+$failed-color : red;
+$out-of-audit-color : pink;
+$pending-color : orange;
+$compliant-color : green;
+$total-color : #333;
+
+body {
+  background : #eee;
+}
+.container {
+  margin-top : 1em;
+  margin-bottom : 1em;
+  height : 100%;
+}
+section {
+  padding : 2em 0;
+  background : #fff;
+  margin : 2em 0;
+}
+h2 {
+  font-weight : bold;
+  text-align : center;
+}
+#node-summary {
+  padding : .5em 1em;
+  border : 1px solid #ddd;
+  margin : 1em;
+  width : 50%;
+
+  th,
+  td {
+    line-height : 1.4em;
+    em {
+      color : #999;
+      font-style : normal;
+      font-weight : normal;
+    }
+  }
+  .value {
+    font-size : 2.4em;
+    font-weight : bold;
+    text-align : right;
+    padding-right : .3em;
+    width : 2em;
+  }
+  .label {
+    font-size : 1.4em;
+    padding-bottom : .5em;
+    hr {
+      border : none;
+      margin : 0;
+      height : 5px;
+    }
+  }
+
+  .unresponsive {
+    color : $unresponsive-color;
+    hr {
+      background-color : $unresponsive-color;
+    }
+  }
+  .failed {
+    color : $failed-color;
+    hr {
+      background-color : $failed-color;
+    }
+  }
+  .out-of-audit {
+    color : $out-of-audit-color;
+    hr {
+      background-color : $out-of-audit-color;
+    }
+  }
+  .pending {
+    color : $pending-color;
+    hr {
+      background-color : $pending-color;
+    }
+  }
+  .compliant {
+    color : $compliant-color;
+    hr {
+      background-color : $compliant-color;
+    }
+  }
+  .total {
+    color : $total-color;
+    hr {
+      background-color : $total-color;
+    }
+    th {
+      padding-top : .2em;
+      border-top : 1px solid #ddd;
+    }
+  }
+}
+table.node-summary {
+  font-size : 1.2em;
+
+  tr {
+    &:hover {
+      td {
+        background : #eee;
+        cursor : pointer;
+      }
+    }
+  }
+  th {
+    padding-top : 0;
+    padding-bottom : 0;
+    border-bottom : 1px solid $hairline-color;
+  }
+  .groups {
+    th {
+      font-weight : normal;
+      padding-top : 0;
+      padding-bottom : 0;
+      border : none;
+    }
+  }
+  .status {
+    font-weight : bold;
+  }
+  td.host {
+    color : $link-color;
+    text-decoration : underline;
+    cursor : pointer;
+  }
+  .total {
+    font-weight : bold;
+    border-top : none;
+    th {
+      text-align : right;
+    }
+  }
+  tr.total {
+    th {
+      border : none;
+    }
+  }
+}
+.total {
+  border-top : 1px solid #ddd;
+}
+.full-report {
+  font-size : 1.2em;
+  font-weight : bold;
+  position : absolute;
+  top : 40px;
+  right : 0;
+}

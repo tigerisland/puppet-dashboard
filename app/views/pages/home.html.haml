@@ -3,7 +3,7 @@
   .header
     %h2 Dashboard
   .item
-    - if @currently_failing_nodes.present?
+    -# if @currently_failing_nodes.present?
       .section.error
         %h3 Node failures
         %p
@@ -12,7 +12,7 @@
           = succeed '.' do
             = truncated_node_sentence(@currently_failing_nodes, :more_link => nodes_path(:current => true, :successful => false))
 
-    - if @no_longer_reporting_nodes.present?
+    -# if @no_longer_reporting_nodes.present?
       .section.warning
         %h3 Nodes no longer reporting
         %p
@@ -22,7 +22,7 @@
           = succeed '.' do
             = truncated_node_sentence(@no_longer_reporting_nodes, :more_link => no_longer_reporting_nodes_path)
 
-    - if @unreported_nodes.present?
+    -# if @unreported_nodes.present?
       .section.warning
         %h3 Nodes never reported
         %p
@@ -31,6 +31,9 @@
           never reported:
           = succeed '.' do
             = truncated_node_sentence(@unreported_nodes, :more_link => unreported_nodes_path)
+
+    .section
+      = render :partial => 'summaries/nodes'
 
     .section
       = render 'statuses/run_failure', :nodes => @unhidden_nodes
