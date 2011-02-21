@@ -36,6 +36,9 @@
       = render :partial => 'summaries/nodes'
 
     .section
+      = render :partial => 'summaries/hosts'
+
+    .section
       = render 'statuses/run_failure', :nodes => @unhidden_nodes
     .section
       %h3 Recently-reported nodes

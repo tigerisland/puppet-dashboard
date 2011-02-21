@@ -99,15 +99,46 @@ h2 {
     }
   }
 }
-table.node-summary {
+table#host-summary {
   font-size : 1.2em;
 
   tr {
+    td {
+      padding : 2px 5px;
+      cursor : pointer;
+    }
     &:hover {
       td {
-        background : #eee;
-        cursor : pointer;
+        background-color : #eee;
       }
+    }
+  }
+  .status {
+    background : transparent url( /images/icons/unchanged.png ) no-repeat 50% 50%;
+  }
+  .unresponsive {
+    .status {
+      background-image : url( /images/icons/help.png );
+    }
+  }
+  .failed {
+    .status {
+      background-image : url( /images/icons/failed.png );
+    }
+  }
+  .out-of-audit {
+    .status {
+      background-image : url( /images/icons/notice.png );
+    }
+  }
+  .pending {
+    .status {
+      background-image : url( /images/icons/warning.png );
+    }
+  }
+  .compliant {
+    .status {
+      background-image : url( /images/icons/unchanged.png );
     }
   }
   th {

@@ -69,32 +69,46 @@ h2 {
       padding-top: .2em;
       border-top: 1px solid #ddd; }
 
-table.node-summary {
+table#host-summary {
   font-size: 1.2em; }
-  table.node-summary tr:hover td {
-    background: #eee;
+  table#host-summary tr td {
+    padding: 2px 5px;
     cursor: pointer; }
-  table.node-summary th {
+  table#host-summary tr:hover td {
+    background-color: #eee; }
+  table#host-summary .status {
+    background: transparent url(/images/icons/unchanged.png) no-repeat 50% 50%; }
+  table#host-summary .unresponsive .status {
+    background-image: url(/images/icons/help.png); }
+  table#host-summary .failed .status {
+    background-image: url(/images/icons/failed.png); }
+  table#host-summary .out-of-audit .status {
+    background-image: url(/images/icons/notice.png); }
+  table#host-summary .pending .status {
+    background-image: url(/images/icons/warning.png); }
+  table#host-summary .compliant .status {
+    background-image: url(/images/icons/unchanged.png); }
+  table#host-summary th {
     padding-top: 0;
     padding-bottom: 0;
     border-bottom: 1px solid #dddddd; }
-  table.node-summary .groups th {
+  table#host-summary .groups th {
     font-weight: normal;
     padding-top: 0;
     padding-bottom: 0;
     border: none; }
-  table.node-summary .status {
+  table#host-summary .status {
     font-weight: bold; }
-  table.node-summary td.host {
+  table#host-summary td.host {
     color: #3366ff;
     text-decoration: underline;
     cursor: pointer; }
-  table.node-summary .total {
+  table#host-summary .total {
     font-weight: bold;
     border-top: none; }
-    table.node-summary .total th {
+    table#host-summary .total th {
       text-align: right; }
-  table.node-summary tr.total th {
+  table#host-summary tr.total th {
     border: none; }
 
 .total {

@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+
   def home
     @currently_failing_nodes = Node.by_currentness_and_successfulness(true, false).unhidden
     @unreported_nodes = Node.unreported.unhidden
@@ -35,6 +36,22 @@ class PagesController < ApplicationController
     @node_summaries.each do |n| # round to one decimal
       n[ :percent ] = (( n[ :count ].to_f / @total_nodes.to_f ) * 1000 ).round.to_f / 10
     end
+
+    @hostnames = %w[ antiendotoxin ropery irreverendly Hasidic themata bassorin sulphanilate schematogram antitrust millage endothecial auriform flatway grouchily detachable ceruminal backfatter biriba ackman Trixy pushwainling Insessores epistolize apomecometer taxi scratchlike intellectually brewer dankish measondue advertising Titanichthyidae thoracohumeral cascara compilement hackle thonged euphory olease messieurs pounding Welshery tesseraic celiomyalgia sornare Talaing cinchotine trichromic simpleheartedness bra ]
+    @statuses = %w[ unresponsive failed pending compliant ]
+    @host_summaries = []
+    @hostnames.each do |h|
+      @host_summaries.push({
+        :host => h,
+        :status => @statuses[ rand( @statuses.count )],
+        :failed => 1,
+        :pending => 2,
+        :compliant => 3,
+      })
+    end
+    flash[:success] = ["This is a test success, set manually in the pages controller"]
+    flash[:warning] = ["This is a test warning, set manually in the pages controller"]
+    flash[:failure] = ["This is a test failure, set manually in the pages controller"]
   end
 
   def release_notes

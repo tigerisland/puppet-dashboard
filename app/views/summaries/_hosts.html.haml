@@ -1,0 +1,22 @@
+%table#host-summary
+  %thead
+    %tr
+      %th
+      %th Host
+      %th Failed
+      %th Pending
+      %th Successful
+  %tbody
+    - @host_summaries.each do |h|
+      %tr.host{ :class => h[ :status ]}
+        %td.status
+        %td.host
+          = "#{h[ :host ]}.puppetlabs.com"
+        %td.failed
+          = h[ :failed ]
+        %td.pending
+          = h[ :pending ]
+        %td.compliant
+          = h[ :compliant ]
+        %td.total
+          = h[ :failed ] + h[ :pending ] + h[ :compliant ]
