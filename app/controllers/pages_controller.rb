@@ -12,10 +12,6 @@ class PagesController < ApplicationController
     # aww yeah, brute force FTW
     @node_summaries = [
       {
-        :label => 'unresponsive',
-        :count => @no_longer_reporting_nodes.count + @unreported_nodes.count,
-      },
-      {
         :label => 'failed',
         :count => @currently_failing_nodes.count,
       },
@@ -26,6 +22,10 @@ class PagesController < ApplicationController
       {
         :label => 'pending', # need real data access API
         :count => 22,
+      },
+      {
+        :label => 'unresponsive',
+        :count => @no_longer_reporting_nodes.count + @unreported_nodes.count,
       },
       {
         :label => 'compliant', # needs to wait on the above two
