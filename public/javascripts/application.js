@@ -103,6 +103,7 @@ jQuery(document).ready(function(J) {
     J(this).hide();
   });
   init_expandable_list();
+  init_tabs();
 });
 
 function init_expandable_list() {
@@ -148,3 +149,8 @@ function toggle_expandable_link() {
 function display_file_popup(url) {
     jQuery.colorbox({href: url, width: '80%', height: '80%', iframe: true});
 }
+
+function init_tabs() {
+  jQuery( '#tabs' ).tabs();
+}
+

@@ -11,8 +11,12 @@
       var relative_url_root = '#{ActionController::Base.relative_url_root}';
       $.noConflict();
 
-    = stylesheet_link_tag 'reset', 'layout', 'forms', 'tables', 'jquery.ui.custom', 'jquery.ui.combobox', 'typography', 'links', 'token-input-facebook', 'tipsy', 'application', 'colorbox', 'summaries', :cache => 'all'
-    = javascript_include_tag 'prototype', 'jquery-ui.min', 'jquery.tokeninput', 'excanvas.min', 'raphael-min', 'grafico.min', 'jquery.form', 'jquery.placeholders', 'jquery.ui.combobox', 'jquery.colorbox.js', 'jquery.tipsy', 'search', 'application', 'summaries', :cache => 'all'
+    = stylesheet_link_tag 'reset', 'layout', 'forms', 'tables', 'typography', 'links', 'jquery-themes/base/jquery.ui.all', 'token-input-facebook', 'tipsy', 'application', 'colorbox', 'summaries', :cache => 'all'
+    -# removed these:
+    -# 'jquery.ui.custom', 'jquery.ui.combobox',
+    = javascript_include_tag 'prototype', 'jquery-ui-tabs.min', 'jquery.tokeninput', 'excanvas.min', 'raphael-min', 'grafico.min', 'jquery.form', 'jquery.placeholders', 'jquery.colorbox.js', 'jquery.tipsy', 'search', 'application', 'summaries', :cache => 'all'
+    -# removed these:
+    -# 'jquery-ui.min', 'jquery.ui.combobox',
 
   - body_classes = [ "#{controller.controller_name}_controller", "#{controller.controller_name}_#{controller.action_name}_action" ]
   - body_classes << "#{controller.controller_name}_form_action" if %w[new create edit update].include?(controller.action_name)
