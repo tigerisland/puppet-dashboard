@@ -4,7 +4,6 @@ $link-color-hover : $link-color + #333;
 
 $unresponsive-color : gray;
 $failed-color : red;
-$out-of-audit-color : pink;
 $pending-color : orange;
 $compliant-color : green;
 $total-color : #333;
@@ -35,11 +34,6 @@ h2 {
   th,
   td {
     line-height : 1.4em;
-    em {
-      color : #999;
-      font-style : normal;
-      font-weight : normal;
-    }
   }
   .value {
     font-size : 2.4em;
@@ -51,10 +45,25 @@ h2 {
   .label {
     font-size : 1.4em;
     padding-bottom : .5em;
-    hr {
-      border : none;
-      margin : 0;
-      height : 5px;
+    strong {
+      font-weight : normal;
+      display : block;
+      hr {
+        line-height : 5px;
+        border : none;
+        margin : 0;
+        height : 5px;
+        width : 100%;
+        float : left;
+      }
+      em {
+        font-size : .7em;
+        line-height : .6em;
+        font-style : normal;
+        font-weight : normal;
+        padding-left : 5px;
+        float : left;
+      }
     }
   }
 
@@ -68,12 +77,6 @@ h2 {
     color : $failed-color;
     hr {
       background-color : $failed-color;
-    }
-  }
-  .out-of-audit {
-    color : $out-of-audit-color;
-    hr {
-      background-color : $out-of-audit-color;
     }
   }
   .pending {
@@ -124,11 +127,6 @@ table#host-summary {
   .failed {
     .status {
       background-image : url( /images/icons/failed.png );
-    }
-  }
-  .out-of-audit {
-    .status {
-      background-image : url( /images/icons/notice.png );
     }
   }
   .pending {

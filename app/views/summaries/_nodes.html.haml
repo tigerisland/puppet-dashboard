@@ -6,15 +6,16 @@
           = n[ :count ]
         %td.label
           = "#{ n[ :label ].titleize },"
-          %em
-            = "#{ n[ :percent ] }%"
-          %hr{ :style => "width:#{ n[ :percent ].round }%;" }
+          %strong.percent
+            %hr{ :style => "width:#{ n[ :percent ].round }%;" }
+            %em
+              = "#{ n[ :percent ] }%"
 
     %tr.total
       %th.value
         = @total_nodes
       %th.label
         Total nodes
-        %em
-          100%
-        %hr
+        %strong.percent
+          %hr
+          %em 100%

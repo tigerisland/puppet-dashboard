@@ -23,11 +23,6 @@ h2 {
   #node-summary th,
   #node-summary td {
     line-height: 1.4em; }
-    #node-summary th em,
-    #node-summary td em {
-      color: #999;
-      font-style: normal;
-      font-weight: normal; }
   #node-summary .value {
     font-size: 2.4em;
     font-weight: bold;
@@ -37,10 +32,23 @@ h2 {
   #node-summary .label {
     font-size: 1.4em;
     padding-bottom: .5em; }
-    #node-summary .label hr {
-      border: none;
-      margin: 0;
-      height: 5px; }
+    #node-summary .label strong {
+      font-weight: normal;
+      display: block; }
+      #node-summary .label strong hr {
+        line-height: 5px;
+        border: none;
+        margin: 0;
+        height: 5px;
+        width: 100%;
+        float: left; }
+      #node-summary .label strong em {
+        font-size: .7em;
+        line-height: .6em;
+        font-style: normal;
+        font-weight: normal;
+        padding-left: 5px;
+        float: left; }
   #node-summary .unresponsive {
     color: gray; }
     #node-summary .unresponsive hr {
@@ -49,10 +57,6 @@ h2 {
     color: red; }
     #node-summary .failed hr {
       background-color: red; }
-  #node-summary .out-of-audit {
-    color: pink; }
-    #node-summary .out-of-audit hr {
-      background-color: pink; }
   #node-summary .pending {
     color: orange; }
     #node-summary .pending hr {
@@ -82,8 +86,6 @@ table#host-summary {
     background-image: url(/images/icons/help.png); }
   table#host-summary .failed .status {
     background-image: url(/images/icons/failed.png); }
-  table#host-summary .out-of-audit .status {
-    background-image: url(/images/icons/notice.png); }
   table#host-summary .pending .status {
     background-image: url(/images/icons/warning.png); }
   table#host-summary .compliant .status {

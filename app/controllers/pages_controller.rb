@@ -16,10 +16,6 @@ class PagesController < ApplicationController
         :count => @currently_failing_nodes.count,
       },
       {
-        :label => 'out-of-audit', # need to define exactly what this is
-        :count => 6,
-      },
-      {
         :label => 'pending', # need real data access API
         :count => 22,
       },
