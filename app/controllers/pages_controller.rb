@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     @node_summaries = [
       {
         :label => 'failed',
-        :count => @currently_failing_nodes.count,
+        :count => 12, # @currently_failing_nodes.count,
       },
       {
         :label => 'pending', # need real data access API
@@ -21,14 +21,14 @@ class PagesController < ApplicationController
       },
       {
         :label => 'unresponsive',
-        :count => @no_longer_reporting_nodes.count + @unreported_nodes.count,
+        :count => 4, # @no_longer_reporting_nodes.count + @unreported_nodes.count,
       },
       {
         :label => 'compliant', # needs to wait on the above two
         :count => 109,
       },
     ]
-    @total_nodes = @unhidden_nodes.count
+    @total_nodes = 12 + 22 + 4 + 109 # @unhidden_nodes.count
     @node_summaries.each do |n| # round to one decimal
       n[ :percent ] = (( n[ :count ].to_f / @total_nodes.to_f ) * 1000 ).round.to_f / 10
     end

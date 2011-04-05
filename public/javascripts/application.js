@@ -152,6 +152,6 @@ function display_file_popup(url) {
 
 function init_tabs() {
 //  jQuery( '#tabs' ).tabs();
-  jQuery( '#tabs' ).tabs({ selected: 5 }); // XXX this is temporary
+  jQuery( '#tabs' ).tabs({ selected: 4 }); // XXX this is temporary
 }
 
