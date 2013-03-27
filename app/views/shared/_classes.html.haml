@@ -28,6 +28,8 @@
                 = link_to(h('Show Parameters'),path) unless path.nil?
               - else
                 = "Source is not #{resource.name}"
+    - unless resource.class_conflicts.empty?
+      = render 'shared/class_parameter_conflicts', :resource => resource
   - else
     = describe_no_matches_as 'No classes'
 %br.clear

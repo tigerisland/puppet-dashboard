@@ -1,0 +1,25 @@
+%p.error.margin_top_medium
+  %strong Warning:
+  Parameter values conflict.
+%table.inspector
+  %thead
+    %tr
+      %th{:scope => :col} Class
+      %th{:scope => :col} Parameter
+      %th{:scope => :col} Value
+      %th{:scope => :col} Source
+  %tbody
+    - resource.class_conflicts.sort_by{ |entry| entry[0][:name] }.each do |node_class, params|
+      %tr
+        - class_srcs_cnt = 0
+        - params.each { |param| param[:sources].each { |item| class_srcs_cnt += 1 }}
+        %td{:rowspan => class_srcs_cnt}
+          %strong= link_to(h(node_class.name),node_class)
+        - first_param = true
+        - params.sort_by{ |param| param[:name] }.each do |param|
+          - if first_param
+            - first_param = false
+            = render 'shared/parameters_part1', :param => param, :node_class_id => node_class.id
+          - else
+            %tr
+              = render 'shared/parameters_part1', :param => param, :node_class_id => node_class.id
